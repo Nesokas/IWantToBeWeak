@@ -163,6 +163,7 @@ if place_meeting(x+hsp, y, par_ground) {
 if place_meeting(x,y,obj_spikes) {
     room_restart();
 }
+
 x += hsp;
 y += vsp;
 </string>
@@ -200,6 +201,32 @@ y += vsp;
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if place_meeting(x,y,obj_zeus) {
+    draw_text(obj_zeus.x - 250, obj_zeus.y-100, "Hello young demi-god! Press 'W' to jump, and again to double jump, and left shift to sprint!");
+    draw_text(obj_zeus.x - 200, obj_zeus.y-60, "Using your powers, you'll surely overcome the dangerous jump ahead");
+}
+</string>
+          </argument>
+        </arguments>
       </action>
     </event>
   </events>
