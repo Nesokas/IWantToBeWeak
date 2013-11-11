@@ -31,7 +31,8 @@ grav = 0.5;
 left_or_right = 0; // left - 0 | right - 1
 grounded = 0; //used to verify if we are on the floor
 superRunning = false;
-
+REGULAR_JUMP_SPEED = -7; 
+doubleJumped = false; //true if the player already jumped while in mid air
 </string>
           </argument>
         </arguments>
@@ -54,11 +55,13 @@ superRunning = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>Key_Left = keyboard_check_direct(vk_left);
-Key_Right = keyboard_check_direct(vk_right);
-Key_Jump = keyboard_check_direct(vk_space);
+            <string>Key_Left = keyboard_check_direct(ord('A'));
+Key_Right = keyboard_check_direct(ord('D'));
+Key_Jump = keyboard_check_pressed(ord('W'));
 Key_Run = keyboard_check_direct(vk_shift);
-Key_SuperRun = keyboard_check_direct(vk_lcontrol);
+//Key_SuperRun = keyboard_check_direct(vk_lcontrol);
+
+
 
 if(Key_Left)
 {
@@ -71,7 +74,7 @@ if(Key_Left)
         superRunning = false;
         hsp = -6;
     }
-    else if(Key_SuperRun)
+/*    else if(Key_SuperRun)
     {
         sprite_index = spr_superSpeed;
         if(!superRunning)
@@ -81,7 +84,8 @@ if(Key_Left)
         superRunning = true;
         hsp = -8;
     }
-    else
+*/
+     else
     {
        superRunning = false;
        sprite_index = spr_walk
@@ -96,11 +100,11 @@ if(Key_Right)
     image_xscale = 1;
     if(Key_Run)
     {
-        superRunning = false;
+    //    superRunning = false;
         sprite_index = spr_run
         hsp = 6;
     }
-    else if(Key_SuperRun)
+/*    else if(Key_SuperRun)
     {
         sprite_index = spr_superSpeed;
         if(!superRunning)
@@ -109,10 +113,10 @@ if(Key_Right)
         }
         superRunning = true;
         hsp = 8;
-    }
+   }*/ 
     else
     {
-        superRunning = false;
+       // superRunning = false;
         sprite_index = spr_walk
         hsp = 4;
     }
@@ -129,7 +133,15 @@ if((Key_Right &amp;&amp; Key_Left) or (!Key_Right &amp;&amp; !Key_Left))
 
 if(Key_Jump)
 {
-    if(grounded) vsp = -7
+    if(grounded) {
+        vsp = REGULAR_JUMP_SPEED;
+    } else {
+        if (!doubleJumped) {
+            doubleJumped = true;
+            vsp = REGULAR_JUMP_SPEED;
+        }
+    }
+    
 }
 
 vsp += grav;
@@ -139,6 +151,7 @@ if place_meeting(x, y+vsp, par_wall)
     while (!place_meeting(x, y+1, par_wall)) y+=1;
     vsp = 0;
     grounded = 1;
+    doubleJumped = false;
 }
 else
 {
