@@ -27,6 +27,9 @@
     <background>background\background0</background>
   </backgrounds>
   <paths name="paths"/>
+  <fonts name="fonts">
+    <font>fonts\font_pixel</font>
+  </fonts>
   <objects name="objects">
     <object>objects\obj_player</object>
     <objects name="Ground">
