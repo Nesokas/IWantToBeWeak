@@ -127,7 +127,7 @@ if((Key_Right &amp;&amp; Key_Left) or (!Key_Right &amp;&amp; !Key_Left))
 {
 
     sprite_index = spr_still;
-    image_speed = 0.3;
+    image_speed = 0.2;
     superRunning = false;
     hsp = 0;
 }
