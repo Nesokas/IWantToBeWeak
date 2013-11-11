@@ -123,8 +123,7 @@ if(Key_Right)
 
 }
 
-if((Key_Right &amp;&amp; Key_Left) or (!Key_Right &amp;&amp; !Key_Left))
-{
+if((Key_Right &amp;&amp; Key_Left) or (!Key_Right &amp;&amp; !Key_Left)) {
 
     sprite_index = spr_still;
     image_speed = 0.2;
@@ -132,8 +131,7 @@ if((Key_Right &amp;&amp; Key_Left) or (!Key_Right &amp;&amp; !Key_Left))
     hsp = 0;
 }
 
-if(Key_Jump)
-{
+if(Key_Jump) {
     if(grounded) {
         vsp = REGULAR_JUMP_SPEED;
     } else {
@@ -147,24 +145,24 @@ if(Key_Jump)
 
 vsp += grav;
 
-if place_meeting(x, y+vsp, par_ground)
-{
+if place_meeting(x, y+vsp, par_ground) {
     while (!place_meeting(x, y+1, par_ground)) y+=1;
     vsp = 0;
     grounded = 1;
     doubleJumped = false;
 }
-else
-{
+else {
     grounded = 0;
 }
 
-if place_meeting(x+hsp, y, par_ground)
-{
+if place_meeting(x+hsp, y, par_ground) {
     while (!place_meeting(x+sign(hsp), y, par_ground)) x+=sign(hsp);
     hsp = 0;
 }
 
+if place_meeting(x,y,obj_spikes) {
+    room_restart();
+}
 x += hsp;
 y += vsp;
 </string>
