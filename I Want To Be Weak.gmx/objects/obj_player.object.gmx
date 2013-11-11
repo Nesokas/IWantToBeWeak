@@ -31,7 +31,7 @@ grav = 0.5;
 left_or_right = 0; // left - 0 | right - 1
 grounded = 0; //used to verify if we are on the floor
 superRunning = false;
-REGULAR_JUMP_SPEED = -7; 
+REGULAR_JUMP_SPEED = -8; 
 doubleJumped = false; //true if the player already jumped while in mid air
 </string>
           </argument>
