@@ -129,7 +129,7 @@
     <instance objName="obj_spikes" x="800" y="425" name="inst_410A5026" locked="0" code="" scaleX="1.015625" scaleY="0.620155036449432" colour="4294967295" rotation="0"/>
     <instance objName="obj_spikes" x="700" y="425" name="inst_AA6757E0" locked="0" code="" scaleX="0.867187976837158" scaleY="0.620154976844788" colour="4294967295" rotation="0"/>
     <instance objName="obj_ground" x="625" y="400" name="inst_CC0CA8C9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_player" x="175" y="200" name="inst_13D1F911" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_player" x="175" y="200" name="inst_13D1F911" locked="0" code="" scaleX="0.75" scaleY="0.75" colour="4294967295" rotation="0"/>
     <instance objName="obj_zeus" x="376" y="280" name="inst_ABC76B6C" locked="0" code="" scaleX="0.980391979217529" scaleY="1.08695995807648" colour="4294967295" rotation="360"/>
   </instances>
   <tiles/>
