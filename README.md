@@ -1,4 +1,4 @@
-IWantToBeWeak
+I Want To Be Weak
 =============
 - shift para correr
 - CRTL Esquerdo para SuperCorrer, tem vários bugs a tratar na acção de superCorrer porque a animação é maior do que as restantes.
