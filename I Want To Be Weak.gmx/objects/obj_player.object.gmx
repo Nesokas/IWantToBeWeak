@@ -70,7 +70,7 @@ if(Key_Left)
     
     if(Key_Run)
     {
-        sprite_index = spr_run
+        sprite_index = spr_run;
         superRunning = false;
         hsp = -6;
     }
@@ -88,7 +88,7 @@ if(Key_Left)
      else
     {
        superRunning = false;
-       sprite_index = spr_walk
+       sprite_index = spr_walk;
        hsp = -4;
     }
 
@@ -101,7 +101,7 @@ if(Key_Right)
     if(Key_Run)
     {
     //    superRunning = false;
-        sprite_index = spr_run
+        sprite_index = spr_run;
         hsp = 6;
     }
 /*    else if(Key_SuperRun)
@@ -117,7 +117,7 @@ if(Key_Right)
     else
     {
        // superRunning = false;
-        sprite_index = spr_walk
+        sprite_index = spr_walk;
         hsp = 4;
     }
 
@@ -127,6 +127,7 @@ if((Key_Right &amp;&amp; Key_Left) or (!Key_Right &amp;&amp; !Key_Left))
 {
 
     sprite_index = spr_still;
+    image_speed = 0.3;
     superRunning = false;
     hsp = 0;
 }
@@ -146,9 +147,9 @@ if(Key_Jump)
 
 vsp += grav;
 
-if place_meeting(x, y+vsp, par_wall)
+if place_meeting(x, y+vsp, par_ground)
 {
-    while (!place_meeting(x, y+1, par_wall)) y+=1;
+    while (!place_meeting(x, y+1, par_ground)) y+=1;
     vsp = 0;
     grounded = 1;
     doubleJumped = false;
@@ -158,9 +159,9 @@ else
     grounded = 0;
 }
 
-if place_meeting(x+hsp, y, par_wall)
+if place_meeting(x+hsp, y, par_ground)
 {
-    while (!place_meeting(x+sign(hsp), y, par_wall)) x+=sign(hsp);
+    while (!place_meeting(x+sign(hsp), y, par_ground)) x+=sign(hsp);
     hsp = 0;
 }
 
