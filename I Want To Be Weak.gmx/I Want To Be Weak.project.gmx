@@ -12,7 +12,9 @@
     <sprite>sprites\spr_run</sprite>
     <sprite>sprites\spr_superSpeed</sprite>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\background0</background>
+  </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
     <object>objects\obj_player</object>
