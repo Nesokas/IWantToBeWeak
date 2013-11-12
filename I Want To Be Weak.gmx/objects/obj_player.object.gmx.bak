@@ -150,21 +150,6 @@ if(Key_Jump) {
 }
 
 vsp += grav;
-//player hit pushable stone
-if place_meeting(x, y+vsp, obj_StonePushable2) {
-    while (!place_meeting(x, y+1, obj_StonePushable2)) y+=1;
-    vsp = 0;
-    grounded = 1;
-    doubleJumped = false;
-}
-
-if place_meeting(x+hsp, y, obj_StonePushable2) {
-    while (!place_meeting(x+sign(hsp), y, obj_StonePushable2)) x+=sign(hsp);
-    hsp = 0;
-}
-
-
-//player hit ground
 
 if place_meeting(x, y+vsp, par_ground) {
     while (!place_meeting(x, y+1, par_ground)) y+=1;
@@ -172,7 +157,7 @@ if place_meeting(x, y+vsp, par_ground) {
     grounded = 1;
     doubleJumped = false;
 }
-else if (!place_meeting(x, y+1, obj_StonePushable2)) {
+else {
     grounded = 0;
 }
 
