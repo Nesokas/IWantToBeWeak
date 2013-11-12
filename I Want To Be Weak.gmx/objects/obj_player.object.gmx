@@ -93,6 +93,8 @@ if(Key_Left)
        sprite_index = spr_walk;
        hsp = -4;
     }
+    if place_meeting(x, y, par_ground) 
+        y -= 1;
 
 }
 
@@ -122,6 +124,8 @@ if(Key_Right)
         sprite_index = spr_walk;
         hsp = 4;
     }
+    if place_meeting(x, y, par_ground) 
+        y -= 1;
 
 }
 
